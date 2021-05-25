@@ -47,6 +47,7 @@ export type ConnextModalProps = {
   withdrawChainId?: number;
   withdrawAssetId: string;
   withdrawalAddress: string;
+  withdrawalRecipient: string;
   transferAmount?: string;
   injectedProvider?: any;
   loginProvider?: any;
@@ -71,6 +72,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
   withdrawAssetId: _withdrawAssetId,
   withdrawChainId: _withdrawChainId,
   withdrawalAddress,
+  withdrawalRecipient,
   transferAmount: _transferAmount,
   injectedProvider: _injectedProvider,
   loginProvider: _loginProvider,
@@ -844,7 +846,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
             message={message!}
             senderChainInfo={senderChain!}
             receiverChainInfo={receiverChain!}
-            receiverAddress={withdrawalAddress}
+            receiverAddress={withdrawalRecipient}
             showNetworkBar={lastScreenState === SCREEN_STATES.RECOVER ? false : true}
             options={handleOptions}
           />
@@ -859,7 +861,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
             existingChannelBalance={existingChannelBalanceUi!}
             senderChainInfo={senderChain!}
             receiverChainInfo={receiverChain!}
-            receiverAddress={withdrawalAddress}
+            receiverAddress={withdrawalRecipient}
             options={handleOptions}
           />
         );
@@ -875,7 +877,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
             amountError={amountError}
             senderChainInfo={senderChain!}
             receiverChainInfo={receiverChain!}
-            receiverAddress={withdrawalAddress}
+            receiverAddress={withdrawalRecipient}
             senderAmount={transferAmountUi}
             recipientAmount={receivedAmountUi}
             existingChannelBalance={existingChannelBalanceUi!}
@@ -928,7 +930,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
             senderChannelAddress={connextSdk!.senderChainChannelAddress}
             senderChainInfo={senderChain!}
             receiverChainInfo={receiverChain!}
-            receiverAddress={withdrawalAddress}
+            receiverAddress={withdrawalRecipient}
             options={handleOptions}
             handleBack={handleBack}
           />
@@ -945,7 +947,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
             transactionId={withdrawTx!}
             senderChainInfo={senderChain!}
             receiverChainInfo={receiverChain!}
-            receiverAddress={withdrawalAddress}
+            receiverAddress={withdrawalRecipient}
             onClose={handleCloseButton}
             options={handleOptions}
           />
@@ -963,7 +965,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
             state={state}
             senderChainInfo={senderChain!}
             receiverChainInfo={receiverChain!}
-            receiverAddress={withdrawalAddress}
+            receiverAddress={withdrawalRecipient}
             handleRecoveryButton={handleRecoveryButton}
             options={handleOptions}
             handleBack={handleBack}

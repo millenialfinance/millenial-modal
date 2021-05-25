@@ -86,6 +86,7 @@ function App() {
         // }}
         transferAmount={transferAmount}
         withdrawalAddress={"0x75e4DD0587663Fce5B2D9aF7fbED3AC54342d3dB"}
+        withdrawalRecipient={"0x22222D0587663Fce5B2D9aF7fbED3AC54342d3dB"}
         injectedProvider={loginProvider}
         loginProvider={loginProvider}
         // prod config
