@@ -1,5 +1,5 @@
 {
-  "name": "@millennialfinance/millenial-vector-sdk",
+  "name": "millennialfinance/millenial-vector-sdk",
   "version": "0.0.7",
   "description": "> TODO: description",
   "author": "sanchaymittal <sanchaymittal@gmail.com>",
@@ -71,5 +71,5 @@
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
-  "gitHead": "a223fa1341d1eb49ec59f5c76fed168cf3ec47ad"
+  "gitHead": "d6c458f5723d3ba0071f29f648cf243a59ebe1ad"
 }

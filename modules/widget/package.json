@@ -1,5 +1,5 @@
 {
-  "name": "@millennialfinance/millenial-modal",
+  "name": "millennialfinance/millenial-modal",
   "version": "1.0.10",
   "license": "MIT",
   "author": "z80dev",
@@ -61,5 +61,5 @@
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
-  "gitHead": "a223fa1341d1eb49ec59f5c76fed168cf3ec47ad"
+  "gitHead": "d6c458f5723d3ba0071f29f648cf243a59ebe1ad"
 }
