@@ -47,6 +47,7 @@ export type ConnextModalProps = {
   withdrawChainId?: number;
   withdrawAssetId: string;
   withdrawalAddress: string;
+  vaultName: string;
   withdrawalRecipient: string;
   transferAmount?: string;
   injectedProvider?: any;
@@ -72,6 +73,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
   withdrawAssetId: _withdrawAssetId,
   withdrawChainId: _withdrawChainId,
   withdrawalAddress,
+  vaultName,
   withdrawalRecipient,
   transferAmount: _transferAmount,
   injectedProvider: _injectedProvider,
@@ -875,6 +877,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
             userAddress={userAddress}
             userBalance={userBalance}
             amountError={amountError}
+            vaultName={vaultName}
             senderChainInfo={senderChain!}
             receiverChainInfo={receiverChain!}
             receiverAddress={withdrawalRecipient}
@@ -964,8 +967,8 @@ const ConnextModal: FC<ConnextModalProps> = ({
             switchNetwork={switchNetwork}
             state={state}
             senderChainInfo={senderChain!}
-            receiverChainInfo={receiverChain!}
             receiverAddress={withdrawalRecipient}
+            receiverChainInfo={receiverChain!}
             handleRecoveryButton={handleRecoveryButton}
             options={handleOptions}
             handleBack={handleBack}

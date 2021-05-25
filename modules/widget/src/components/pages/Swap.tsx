@@ -14,6 +14,7 @@ export interface TransferProps {
   receiverChainInfo: ChainDetail;
   receiverAddress: string;
   senderAmount: string | undefined;
+  vaultName: string;
   recipientAmount: string | undefined;
   feeQuote: string | undefined;
   swapRate: string | undefined;
@@ -26,6 +27,7 @@ export interface TransferProps {
 const Swap: FC<TransferProps> = props => {
   const {
     amountError,
+    vaultName,
     userBalance,
     userAddress,
     senderChainInfo,
@@ -282,6 +284,14 @@ const Swap: FC<TransferProps> = props => {
                   <input type="checkbox" name="confirmation" checked={check} onChange={() => setCheck(!check)} />
                   <Text flex="auto" fontSize="0.875rem">
                     Please confirm the receiver address on {receiverChainInfo.name}
+                  </Text>
+                </Stack>
+              )}
+
+              {vaultName && (
+                <Stack spacing={1}>
+                  <Text flex="auto" fontSize="0.875rem">
+                  Destination Vault: {vaultName}
                   </Text>
                 </Stack>
               )}
