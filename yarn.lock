@@ -1018,6 +1018,28 @@
     pino "6.11.1"
     tty "1.0.1"
 
+"@connext/vector-sdk@^0.0.3-beta.0":
+  version "0.0.3-beta.0"
+  resolved "https://registry.yarnpkg.com/@connext/vector-sdk/-/vector-sdk-0.0.3-beta.0.tgz#a960d450be101a0b30c67bcee8cc6cbd3c3f81f4"
+  integrity sha512-bUrZyHMFpMZ+R7E3hHVp55dFERGrLQ1qZTDdf8BGMJewuHab9CJtUsUVFnYbR59w+vY2AWeZZC8PliMNZfij0g==
+  dependencies:
+    "@connext/vector-browser-node" "0.2.5-beta.13"
+    "@connext/vector-contracts" "0.2.5-beta.13"
+    "@connext/vector-types" "0.2.5-beta.13"
+    "@connext/vector-utils" "0.2.5-beta.13"
+    "@ethersproject/address" "5.1.0"
+    "@ethersproject/bignumber" "5.1.0"
+    "@ethersproject/constants" "5.1.0"
+    "@ethersproject/contracts" "5.1.1"
+    "@ethersproject/providers" "5.1.0"
+    "@ethersproject/units" "5.1.0"
+    "@logdna/browser" "^1.1.1"
+    "@metamask/detect-provider" "^1.2.0"
+    awesome-debounce-promise "^2.1.0"
+    browserify "^17.0.0"
+    evt "1.9.13"
+    lodash "^4.17.21"
+
 "@connext/vector-types@0.2.5-beta.13":
   version "0.2.5-beta.13"
   resolved "https://registry.yarnpkg.com/@connext/vector-types/-/vector-types-0.2.5-beta.13.tgz#030f61440d912d1f8b8e4c1c0b76478ced37e79b"

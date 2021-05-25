@@ -1,8 +1,8 @@
 {
-  "name": "@connext/vector-modal",
+  "name": "@z80dev/vector-modal",
   "version": "1.0.6-beta.0",
   "license": "MIT",
-  "author": "connext",
+  "author": "z80dev",
   "description": "widget for cross-chain swap",
   "repository": {
     "type": "git",
