@@ -831,7 +831,7 @@ const ConnextModal: FC<ConnextModalProps> = ({
         break;
 
       default:
-        console.error("pMessage: ", pMessage);
+        console.error("error pMessage: ", pMessage);
         const _title = pTitle ? pTitle : state === ERROR_STATES.ERROR_TRANSFER ? "Transfer Error" : "Setup Error";
 
         const _pError = (pError as VectorError).context?.validationError ?? pError;
