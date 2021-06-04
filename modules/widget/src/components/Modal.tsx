@@ -219,7 +219,8 @@ const ConnextModal: FC<ConnextModalProps> = ({
       return;
     }
 
-    let transferAmountBn = BigNumber.from(parseUnits(input, senderChain?.assetDecimals!));
+    let inputBn = BigNumber.from(parseUnits(input, senderChain?.assetDecimals!));
+    let transferAmountBn = inputBn;
 
     if (existingChannelBalanceUi) {
       const existingBalanceBn = BigNumber.from(parseUnits(existingChannelBalanceUi, senderChain?.assetDecimals!));
@@ -232,7 +233,6 @@ const ConnextModal: FC<ConnextModalProps> = ({
       const res = await connextSdk!.estimateFees({
         transferAmount: transferAmount,
         isRecipientAssetInput: receiveExactAmount,
-        userBalance: userBalance,
       });
       console.log(res);
       setAmountError(res.error);
@@ -244,12 +244,22 @@ const ConnextModal: FC<ConnextModalProps> = ({
       if (res.totalFee) setTransferFeeUi(res.totalFee);
 
       if (res.recipientAmount) {
-        const tA = parseFloat(transferAmount);
+        const tA = parseFloat(transferAmount) - parseFloat(res.totalFee ?? "0");
         const rA = parseFloat(res.recipientAmount);
 
         const _swapRate = tA / rA;
         setSwapRate(_swapRate.toString());
       }
+
+      if (userBalance && !res.error) {
+        const userBalanceBn = BigNumber.from(parseUnits(userBalance, senderChain?.assetDecimals!));
+
+        if (inputBn.gt(userBalanceBn)) {
+          const err = "Transfer amount exceeds user balance";
+          setAmountError(err);
+        }
+      }
+
       return res.transferQuote;
     } catch (e) {
       const message = "Error Estimating Fees";
