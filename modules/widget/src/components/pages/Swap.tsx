@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { ChainDetail, TransferQuote, truncate } from "@connext/vector-sdk";
+import { getConfirmationsForChain } from "@connext/vector-types";
 
 import { ModalContent, ModalBody, Text, Stack, Button, InputGroup, Input } from "../common";
 import { Header, Footer, NetworkBar } from "../static";
@@ -302,7 +303,9 @@ const Swap: FC<TransferProps> = props => {
                 disabled={!!amountError || !senderAmount || isLoad || !check ? true : false}
                 onClick={handleSubmit}
               >
-                {isLoad ? "Waiting For Transaction" : "Swap"}
+            {isLoad
+                  ? `Waiting for tx + ${getConfirmationsForChain(senderChainInfo.chainId)} confirmations`
+                  : "Swap"}
               </Button>
             </Stack>
 

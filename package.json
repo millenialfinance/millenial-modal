@@ -19,13 +19,16 @@
     "start": "lerna run start --stream --parallel",
     "test": "lerna run test --",
     "lint": "lerna run lint -- --fix",
-    "clean": "rm -rf node_modules && rm -rf modules/*/node_modules modules/*/dist",
-    "clean:app": "rm -rf example/node_modules example/.cache example/dist",
+    "clean": "rm -rf node_modules && rm -rf modules/*/node_modules modules/*/dist* modules/* /.nyc_output/*",
+    "clean:app": "rm -rf example/node_modules example/.cache example/dist* example/yarn.lock*",
     "build": "lerna run build",
     "prepublish": "lerna run prepublish",
     "publish": "lerna publish",
-    "start:app": "yarn run build && yarn --cwd example && yarn --cwd example start",
-    "cypress": "cypress run",
-    "cypress:open": "cypress open"
+    "start:app": "yarn clean:app && yarn run build && yarn --cwd example && yarn --cwd example start",
+    "cypress": "start-server-and-test start:app http://localhost:1234 'cypress run'",
+    "cypress:open": "start-server-and-test start:app http://localhost:1234 'cypress open'"
+  },
+  "dependencies": {
+    "start-server-and-test": "^1.12.3"
   }
 }
